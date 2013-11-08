@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0081)http://cm.dce.harvard.edu/2014/01/14291/L09/screen_H264MultipleHighLTH-16x9.shtml -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Harvard Extension Classroom</title>
+		
+		<meta name="language" content="English">
+		<meta name="description" content="Harvard Extension Classroom for PUB0018066576">
+		<meta name="keywords" content="Harvard University, Distance Education, PUB0018066576"> 
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">    
+		<link media="screen" rel="stylesheet" href="http://cm.dce.harvard.edu/styles/colorbox.css">
+		<link rel="stylesheet" href="./jquery-effects_files/screen-3.css" type="text/css" media="screen, projection">
+		<script type="text/javascript" src="./jquery-effects_files/jquery-1-4-3.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/jquery-cookie-1.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/jquery-colorbox-1-3-16.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/publicationPrefs.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/preferences-2.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/presentation-1.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/presentationFlashPause.js"></script>
+	
+		
+<script type="text/javascript">
+//<!--
+// ensure proper name is set
+window.name = "HarvardVideo14291";
+var	courseCrn = "14291";
+var	pageWidth = 1178;
+var	pageHeight = 900;
+var materialsWindow;
+
+// protection to delay resize until window is ready (IE8 fix)
+function selfResize() {
+	materialsWindow = window.open("materials_master_frameset.shtml","HarvardMaterials", "width=660,height=630, left=1178,top=1,location=no,toolbar=no,menubar=yes,dependent=no,scrollbars=yes,resizable=yes");
+
+	if (screen && screen.availWidth < pageWidth) {
+    	pageWidth = screen.availWidth;
+	}
+	if (screen && screen.availHeight < pageHeight) {
+        pageHeight = screen.availHeight;
+	}
+	// The following command doesn't work on all browsers...
+	self.moveTo(1, 1);
+	self.resizeTo(pageWidth, pageHeight);
+}
+//-->
+</script>
+
+<!--
+ File: FlashViewerHeaderInclude.jsp
+
+ Purpose: Required header parts for embedding the FlashViewer.  
+ This should be included as part of the header tag of the page embedding the
+ viewer.
+
+ IMPORTANT: The flash parameter allowscriptaccess has to be set to 'always'
+ in order to allow the web page to have a different domain from the swf file
+ domain (de-dev-app1 X de-dev-cm). 
+-->
+
+
+
+<!--
+	javascriptUrl =  /javascript/
+ -->
+        <style type="text/css" media="screen"> 
+			html, body	{ height:100%; }
+			body { margin:0; padding:0; overflow:auto; text-align:center; 
+			       background-color: #ffffff; }
+   
+			#flashContent1 { display:none; }
+
+        </style>
+		
+        <script type="text/javascript" src="./jquery-effects_files/swfobject.js"></script>
+		<script type="text/javascript" src="./jquery-effects_files/de_utils.js"></script>		 
+
+		<!-- UI Update scripts -->
+		<script type="text/javascript">
+		//  <!-- global vars for 4x3 media
+		
+		var minWidth = 370; // min width of header and footer, min doc width allowed
+		// Common buffer sizes for slide media content area 
+		var wBuffer = 40; // gives a right margin in singleIndex and left and right margin in materials	
+		var hBuffer = 64; // height buffer
+		var flashHeight = 580; // fixed height of 4x3 size flash html
+		var flashWidth = 1132; 
+		var leftBuffer = flashWidth + 20; // fixed width fo 4x3 size flash html plus a buffer
+		
+		// Initialize listeners and sizing on document ready	
+		$(document).ready(function() {
+			selfResize(); // resize the window 
+
+			// initialize preference popup
+			$('.colorbox').click(function() {
+			/** Note this is dynamic changing content!! **/
+				colorBoxLaunch("L09","OCT 30","Publication");
+				return false;
+			});
+
+			// listener
+			$(window).resize(function() {
+				resizeMatBox(); 
+			});
+		});
+		
+function ReturnToOfferingList() {
+	// Find window with proper name or open a new one with the name
+	var listRef = window.open("../publicationListing.shtml",
+			"publicationListing14291DCE");
+	listRef.focus();
+	self.close();
+
+}
+	//-->
+	</script>
+
+	<style type="text/css" media="screen">
+		html,body {
+		height: 100%; 
+		width: 100%;
+		min-width: 640px;
+		} 
+	
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: auto;
+			min-width: 1132px;
+		}
+		#flashContent1 {
+			visibility: hidden;
+			height: 580px; /* give flash container initial height and width*/
+			width: 1132px;
+			min-width: 1132px;
+			margin-left:10px;
+		}
+		
+		
+			h3, h4{
+				white-space:normal; /* wrap white space */
+			}
+		
+			li {
+				line-height:1.3em;
+			}	 	
+		</style>
+  <style type="text/css" media="screen">#flashContent1 {visibility:hidden}#flashContent1 {display:block;text-align:left;}</style></head>
+  
+<!--
+This file was generated for PUB0018066576 at 10/31/2013 14:37:30 
+using flashViewerLTHScreen.jsp.
+-->  
+ <body bgcolor="#ffffff" onload="javascript:self.focus();" onunload="javascript:CloseMaterialsWindow()"><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="padding-bottom: 42px; padding-right: 42px; display: none;"><div id="cboxWrapper" style=""><div style=""><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" class="" style="width: 0px; height: 0px; overflow: hidden;"></div><div id="cboxLoadingOverlay" class="" style=""></div><div id="cboxLoadingGraphic" class="" style=""></div><div id="cboxTitle" class="" style=""></div><div id="cboxCurrent" class="" style=""></div><div id="cboxNext" class="" style=""></div><div id="cboxPrevious" class="" style=""></div><div id="cboxSlideshow" class="" style=""></div><div id="cboxClose" class="" style=""></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>
+<div id="container" style="width: 100%;">
+
+ 
+	<!--Distance Education Header and banner (Sept 2012)-->
+   			<div id="header-banner-ext" class="banner">
+				<div id="harvard">
+				<a class="banner-link" title="Harvard Extension School" target="_blank" href="http://extension.harvard.edu/">
+					<span class="h1">Harvard University Extension School</span>
+				</a>
+				</div>
+			</div>
+<!-- END #header -->
+
+
+
+<hr>
+
+<div id="content">
+<div id="content-header">
+<div id="page-head">
+<div id="course-title">
+<h4><a target="_blank" href="http://dwa15.com/">CSCI E-15</a></h4>
+<h3>Dynamic Web Applications, Lecture 9</h3>
+
+</div><div id="nav-extras" style="float: none; width: 100%; left: 0px;">
+<ul>
+        <li class="nav-preferences"><a id="prefPage" target="_blank" href="http://cm.dce.harvard.edu/2014/01/14291/L09/preferences.html" class="colorbox">Set Preferences</a></li>
+		<li class="nav-list"><a target="_blank" onclick="javascript:ReturnToOfferingList();self.close(); return false;" href="">Return to listing</a></li>
+        <li class="nav-problem"><a target="_blank" href="http://cm.dce.harvard.edu/forms/report.shtml">Report a problem</a></li>
+        <li class="nav-help"><a target="_blank" href="http://cm.dce.harvard.edu/includes/help-publication.shtml">Get help</a></li>
+</ul>
+</div>
+
+
+</div>
+<noscript>
+&lt;h3 style="color: red"&gt;JavaScript is not enabled on this browser!
+JavaScript must be enabled to play media.&lt;/h3&gt;
+</noscript>
+</div>
+</div>
+
+<div id="mainFrame" style="height: 580px; width: 1132px;">
+
+<!--
+ File: FlashViewerInitInclude.jsp
+
+ Purpose: Required for embedding the FlashViewer within a page.
+ Include this page after the body tag.  Checks for proper version of 
+ Flash player.  Assumes that this is preceeded by an include of 
+ FlashViewerHeaderInclude.jsp
+-->
+
+
+
+        <script type="text/javascript">
+            // <!-- For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. --> 
+            var swfVersionStr = "10.0.0";
+            // <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
+            var xiSwfUrlStr = "/flash/playerProductInstall.swf";
+		</script>
+
+		<noscript>
+			&lt;h3 style="color: red"&gt;JavaScript is not enabled on this browser! JavaScript must be enabled to play media.&lt;/h3&gt;  
+		</noscript>   
+		
+
+
+<!--
+ File: FlashViewerEmbedInclude.jsp
+
+ Purpose: Embed the FlashViewer. 
+-->
+
+
+
+
+   <!-- 
+ 	 flashPlayerUrl = "/flash/" 
+ 	 allowScriptAccess = "sameDomain"
+ 	 viewerNumber = "1" 
+	 url = "http://cm.dce.harvard.edu/2014/01/14291/L09/14291-20131030-L09-H264MultipleHighLTH-16x9.xml"  
+	 videoWidth = "852" 
+	 videoHeight = "480" 
+   -->
+
+		<script type="text/javascript">
+		
+			// used to validate hour parameter
+			var numberOfSegments = 2;
+
+        	var flashvars1 = {};
+        	flashvars1.url = "http://cm.dce.harvard.edu/2014/01/14291/L09/14291-20131030-L09-H264MultipleHighLTH-16x9.xml";
+        	flashvars1.videoWidth = "852";
+        	flashvars1.videoHeight = "480";
+        	flashvars1.resizable = true;
+flashvars1.hour = 1;
+flashvars1.autoPlay = true;
+flashvars1.largeTH = true;
+flashvars1.cdn = false;
+
+            
+            //<!-- 
+            // This will create or overwrite optional HOUR parameter
+            // Tests if URL had query argument: "?part=3" 
+            // Checking for part in range prevents flash #1006 error 
+            if (location.search != ""){
+                var queryStr = location.search.split('?');
+                if(queryStr.length > 1){
+					queryStr = queryStr[1];
+	            	var queryArray = queryStr.split("&");
+	            	for ( var i = 0; i < queryArray.length; i++){
+	            		var pair = queryArray[i].split("=");
+	            		if ((pair[0] == "part") && (pair.length > 1) && !isNaN(pair[1])){
+	            			if((numberOfSegments != null) && (0 < pair[1]) && (pair[1] <= numberOfSegments) ){
+		            			flashvars1.hour = pair[1];
+		            		} // make sure hour value is in range
+		            	} // end if HOUR is part of query 
+		            }  // end query pair array loop
+		       }  // end if query has content
+            } // end if query exists
+            // -->
+            var params1 = {};
+            params1.quality = "high";
+            params1.bgcolor = "#ffffff";
+            params1.allowscriptaccess = "sameDomain";
+            params1.allowfullscreen = "true";
+            params1.wmode = "transparent";
+            
+            var attributes1 = {};
+            attributes1.id = "flashContent1";
+            attributes1.name = "flashContent1";
+            attributes1.align = "middle";
+
+            swfobject.embedSWF(
+                "/flash/FlashViewer.swf", "flashContent1", 
+                "100%", "100%", 
+                swfVersionStr, xiSwfUrlStr, 
+                flashvars1, params1, attributes1);
+
+            //<!-- JavaScript enabled so display the flashContent div in case it is not replaced with a swf object. -->
+			swfobject.createCSS("#flashContent1", "display:block;text-align:left;");
+            
+        </script>
+        <!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough 
+			 JavaScript and Flash plug-in support is available. The div is initially hidden so that it doesn't show
+			 when JavaScript is disabled.
+		-->
+        <object type="application/x-shockwave-flash" id="flashContent1" name="flashContent1" align="middle" data="http://cm.dce.harvard.edu/flash/FlashViewer.swf" width="100%" height="100%" style="visibility: visible; width: 1132px; height: 580px;"><param name="quality" value="high"><param name="bgcolor" value="#ffffff"><param name="allowscriptaccess" value="sameDomain"><param name="allowfullscreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="url=http://cm.dce.harvard.edu/2014/01/14291/L09/14291-20131030-L09-H264MultipleHighLTH-16x9.xml&amp;videoWidth=852&amp;videoHeight=480&amp;resizable=true&amp;hour=1&amp;autoPlay=true&amp;largeTH=true&amp;cdn=false"></object>
+        
+
+</div>
+
+<div id="footer">
+
+
+<div id="footer-privacy">
+<a target="_blank" href="http://www.extension.harvard.edu/help/privacy.jsp">Privacy
+        Statement</a>&nbsp;|&nbsp;     
+        <a target="_blank" href="http://www.extension.harvard.edu/open-learning-initiative/terms-of-use">Terms and
+        Conditions</a>
+&nbsp;|&nbsp;<a href="http://cm.dce.harvard.edu/2014/01/14291/L09/screen_H264MultipleHighLTH-16x9.shtml#" alt="toggle Header Display" class="toggleHeader" onclick="javascript:toggleHeader();return false;">Hide Header</a></div><div id="footer-copyright" style="float: none; width: 100%; left: 0px;"> ©2013-14 President and Fellows of Harvard College</div>  
+
+</div>
+<!-- END #footer -->
+
+</div>
+<!-- end content -->
+
+  
+
+
+</body></html>
