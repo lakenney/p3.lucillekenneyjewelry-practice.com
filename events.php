@@ -29,10 +29,29 @@
 	<div id='lucy' class='ricardo'></div>
 	<div id='ricky' class='ricardo'></div>
 
+	<!--Select your favorite color: 
+	<input type="color" name="favcolor">-->
+
+	<!--<form action="events.php">
+  		Type in a color: 
+  		<input type="text" name="color"><br>
+  	<input type="submit" value="Submit">
+	</form>-->
+
+	<!--<input type="text" name="color" id="color"><br>-->
+
+<textarea id="color"></textarea>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  
 	<script>
+
+	    $("#lucy").click(function() {
+       		//var value = jQuery("textarea#color").val();
+        var value = $("#color").val();
+		$('#lucy').css('background-color', $value);
+        //alert(value);
+        });
 
 	
 	//$('.color').click(function(){
@@ -40,15 +59,6 @@
 	//	var color_that_was_clicked = $(this).css('background-color');
 		
 	//}
-	
-		$('#lucy').click(function() {
-
-			.css('border','1px solid blue');
-			//	console.log("Lucy was clicked!")
-
-		});
-	
-		
 
 		//document.getElementById("lucy").style.backgroundColor = 'purple';
 		//document.getElementById('lucy').style.width = '500px';
@@ -58,12 +68,18 @@
 		//$('body').css('background-color','yellow');
 		//$('div').css('background-color','green');
 		//$("div").remove('#lucy, #ricky');
-		$('#lucy').click(function(){ 
+		//$('#lucy').click(function(){ 
 
 			//alert('Hello world!');
-			console.log('Lucy was clicked.');
+			//console.log('Lucy was clicked.');
+			//$(this).css('border','1px solid blue');
+			//$('#ricky').css('width','400px');
+			//$(this).css('opacity','.5');
+			//$('#lucy').css('height','400px');
 
-		});
+		//});
+
+
 
 		//document.getElementById("lucy").style.width = '500px';
 
