@@ -48,9 +48,9 @@
 
 	    $("#lucy").click(function() {
        		//var value = jQuery("textarea#color").val();
-        var value = $("#color").val();
-		$('#lucy').css('background-color', $value);
-        //alert(value);
+        	var value = $("#color").val();
+			$('#lucy').css('background-color', value);
+        alert(value);
         });
 
 	
