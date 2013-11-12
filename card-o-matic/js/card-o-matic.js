@@ -58,6 +58,12 @@ $('input[name=message]').click(function() {
 
 });
 
+/*-------------------------------------------------------------------------------------------------
+(Bonus) Font chooser
+-------------------------------------------------------------------------------------------------*/
+
+
+
 
 /*-------------------------------------------------------------------------------------------------
 Recipient
@@ -129,7 +135,7 @@ $('#controls').on('click', '.stickers', function() {
 	// Place the clone in the canvas (.html overwrites vs prepend or append)
 	$('#canvas').prepend(new_image);
 
-	$('.stickers_on_card').draggable({containment: "#canvas", opacity:.35 });
+	new_image.draggable({containment: "#canvas", opacity:.35 });
 
 });
 
@@ -149,8 +155,8 @@ $('#canvas').on('click', '.stickers', function() {
 /*-------------------------------------------------------------------------------------------------
 Bonus! Ability to drag over (rather than click-to-add) new stickers
 -------------------------------------------------------------------------------------------------*/
-/*
-$('.stickers').draggable(
+
+/*$('.stickers').draggable(
 	{ revert: true },
 	{ revertDuration: 0 }, 
 	{stop: function( event, ui ) {
@@ -171,6 +177,17 @@ $('.stickers').draggable(
 	}
 );
 */
+/*$('.stickers').draggable(
+	{ revert: "invalid" }
+);
+
+$( "#canvas" ).droppable(
+	{ accept: '.stickers'},
+	{ drop: function( event, ui ) {
+		ui.draggable.draggable({containment:'#canvas'})
+	}}
+);*/
+
 
 /*-------------------------------------------------------------------------------------------------
 Sticker search with Ajax!
