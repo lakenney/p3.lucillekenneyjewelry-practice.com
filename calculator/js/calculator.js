@@ -10,14 +10,14 @@ $('button').click(function(){
 	if(value == '='){
 		// Evaluate what's in display div
 		var total = eval( $('#display').html() );
-		console.log(total);
-
-
+		//console.log(total);
+			var display = $(this).$('total');
 
 	}
 	else {
 		$('#display').append(value);
 		//console.log(display);
+
 	}
 
 });

@@ -9,6 +9,14 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+	    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a").click(function() {
+                $('head').append('<link rel="stylesheet" href="style2.css" type="text/css" />');
+            });
+        });
+    </script>
 	
 </head>
 
@@ -61,12 +69,17 @@
 			<input type='text' id='recipient' maxlength="14"> 
 			<div id='recipient-error'>Max 14 characters</div>
 
+			<br><br>
+			<a href='javascript:'>change font size</a>
+			<br><br>
+
 		<!-- Sticker picker -->	
 			<h2>Click a sticker to add</h2>
 			<img class='stickers' src='images/sticker-green-gift.png'>
 			<img class='stickers' src='images/sticker-yellow-gift.png'>
 			<img class='stickers' src='images/sticker-heart.png'>
 			<img class='stickers' src='images/sticker-star.png'>
+			<br><br>
 
 			<small>Find your own from Google</small><br>
 			<input type='text' id='sticker-search'>
