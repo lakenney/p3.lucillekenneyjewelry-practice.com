@@ -66,10 +66,9 @@ $('.shapes').click(function(){
 	
 	// use jquery to detech which radiobutton is clicked	
 	var radio_button = $(this).attr('id');
-	var metals = radio_button;
+	var imageMetal = radio_button;
 
-	console.log(metals);
-
+	console.log(imageMetal);
 
 	});
 
@@ -96,19 +95,20 @@ $('.chains').click (function() {
 	// Now I only want to show lengths of chain_selected
 	// so now i need chain_selected and chain_class?
 
-  $('.item-length').toggleClass('show-length');
+	// Toggling show-length on after chain image is clicked
+  	$('.item-length').toggleClass('show-length');
 });
 
 // Bind click event listener on the body
 // Hide list if user clicks anywhere off of the list itself.
-/*$('body').on('click.hide_list', function(e) {
+/*$('body').on('click.hideDropdown', function(e) {
 
   // Check to see if the list is currently displayed.
-  if ($('.item-list').hasClass('show-list')) {
+  if ($('.item-length').hasClass('show-length')) {
     // If element clicked on is NOT one of the menu list items,
     // hide the menu list.
-    if (!$(e.target).parent().hasClass('item-list')) {
-      $('.item-list').removeClass('show-list');
+    if (!$(e.target).parent().hasClass('item-length')) {
+      $('.item-length').removeClass('show-length');
     }
   }
 });*/
