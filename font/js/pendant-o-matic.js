@@ -1,4 +1,47 @@
 /*-------------------------------------------------------------------------------------------------
+Shapes
+Note here we use the .on() method instead of just .click()
+This is because we want this listener to also apply to the Google Image Stickers which are
+added *after* the page loads. In order to do this, on has to be used, and we have to delegate the
+listening for .stickers to the #controls div.
+-------------------------------------------------------------------------------------------------*/	
+//$('#controls').on('click', '.shapes', function() {
+$('.stickers').click(function(){
+
+	// Alternative method: Find which image was clicked then find image source
+	var new_image = "<img src='"++"'></img>";
+	$('#canvas').html(new_image);
+
+	// Clone whatever sticker was clicked
+	//var new_image = $(this).clone();
+	//console.log(new_image);
+
+	new_image.addClass('stickers_on_card');
+
+	// Place the clone in the canvas (.html overwrites vs prepend or append)
+	$('#canvas').prepend(new_image);
+
+	new_image.draggable({containment: "#canvas", opacity:.35 });
+
+});
+
+
+/*-------------------------------------------------------------------------------------------------
+Remove a sticker from the canvas
+-------------------------------------------------------------------------------------------------*/
+$('#canvas').on('click', '.stickers', function() {
+//$('.stickers').click(function(){
+
+	// Remove any stickers
+	var new_image = $(this).remove();
+
+});
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------
 Color picker
 -------------------------------------------------------------------------------------------------*/	
 $('.colors').click(function() {
@@ -115,46 +158,6 @@ $('#message').keyup(function() {
         
 	// Note: The "maxlength" attribute on the HTML element will prevent the user from entering more than 14 characters
 	// <input type='text' id='recipient' maxlength="14"> 
-
-});
-
-
-/*-------------------------------------------------------------------------------------------------
-Stickers
-Note here we use the .on() method instead of just .click()
-This is because we want this listener to also apply to the Google Image Stickers which are
-added *after* the page loads. In order to do this, on has to be used, and we have to delegate the
-listening for .stickers to the #controls div.
--------------------------------------------------------------------------------------------------*/	
-$('#controls').on('click', '.stickers', function() {
-//$('.stickers').click(function(){
-
-	// Alternative method: Find which image was clicked then find image source
-	//var new_image = "<img src='"++"'></img>";
-	//$('#canvas').html(new_image);
-
-	// Clone whatever sticker was clicked
-	var new_image = $(this).clone();
-	//console.log(new_image);
-
-	new_image.addClass('stickers_on_card');
-
-	// Place the clone in the canvas (.html overwrites vs prepend or append)
-	$('#canvas').prepend(new_image);
-
-	new_image.draggable({containment: "#canvas", opacity:.35 });
-
-});
-
-
-/*-------------------------------------------------------------------------------------------------
-Remove a sticker from the canvas
--------------------------------------------------------------------------------------------------*/
-$('#canvas').on('click', '.stickers', function() {
-//$('.stickers').click(function(){
-
-	// Remove any stickers
-	var new_image = $(this).remove();
 
 });
 
