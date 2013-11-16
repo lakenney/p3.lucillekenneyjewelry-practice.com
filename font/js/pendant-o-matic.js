@@ -5,40 +5,81 @@ This is because we want this listener to also apply to the Google Image Stickers
 added *after* the page loads. In order to do this, on has to be used, and we have to delegate the
 listening for .stickers to the #controls div.
 -------------------------------------------------------------------------------------------------*/	
-$('#controls').on('click', '.shapes', function() {
-//$('.shapes').click(function(){
+//$('#controls').on('click', '.shapes', function() {
+$('.shapes').click(function(){
+
+	var imageID = $(this).attr('id');
+	//var size = // the id of the button clicked;
+	//var metal = // the id of the radiobutton that is checked
+
+
+	//var imageURL = "images/" + imageID + "-" + size + ".png";
+	var imageURL = "imgaes/" + imageID + "-" + size + "-" + metal + ".png";
+	//imageURL ="/images/heart-md.png";
+	//console.log(imageURL);
 
 	// Alternative method: Find which image was clicked then find image source
-	//var new_image = "<img src='"+ +"'></img>";
-	//$('#canvas').html(new_image);
+	var new_image = "<img src='" + imageURL + "'></img";
+
+	// Hard coded url
+	//var new_image = "<img src='images/heart-lg.png'></img>";
+	
+	$('#canvas').html(new_image);
+	//console.log(canvas);
+
 
 	// Clone whatever sticker was clicked
-	var new_image = $(this).clone();
+	//var new_image = $(this).clone();
 	//console.log(new_image);
 
-	new_image.addClass('stickers_on_card');
+	//new_image.addClass('shapes_on_card');
 
 	// Place the clone in the canvas (.html overwrites vs prepend or append)
-	$('#canvas').prepend(new_image);
+	//$('#canvas').prepend(new_image);
 
-	new_image.draggable({containment: "#canvas", opacity:.35 });
+	//new_image.draggable({containment: "#canvas", opacity:.35 });
 
 });
+/*-------------------------------------------------------------------------------------------------
+Helper function for creating color and size of shape
+-------------------------------------------------------------------------------------------------*/
+	// check which size is clicked
+	$('input[name=size]').click(function() {
+	//$('.size').click(function() {
+
+	// use jquery to detech which radiobutton is clicked	
+	var radio_button = $(this).attr('id');
+	var size = radio_button;
+	console.log(size);
+
+	});
+
+	// check which metal is clicked
+	$('input[name=metals]').click(function() {
+	//$('.metals').click(function(){
+	
+	// use jquery to detech which radiobutton is clicked	
+	var radio_button = $(this).attr('id');
+	var metals = radio_button;
+
+	console.log(metals);
+
+
+	});
+
+	// build image url
 
 
 /*-------------------------------------------------------------------------------------------------
 Remove a sticker from the canvas
 -------------------------------------------------------------------------------------------------*/
-$('#canvas').on('click', '.stickers', function() {
-//$('.stickers').click(function(){
+$('#canvas').on('click', '.shapes', function() {
+//$('.shapes').click(function(){
 
-	// Remove any stickers
+	// Remove any shapes
 	var new_image = $(this).remove();
 
 });
-
-
-
 
 
 /*-------------------------------------------------------------------------------------------------
@@ -107,7 +148,6 @@ $('input[name=message]').click(function() {
 $("#fs").change(function() {
     //alert($(this).val());
     $('.changeMe').css("font-family", $(this).val());
-
 });
 
 $("#size").change(function() {
@@ -255,10 +295,10 @@ $('#refresh-btn').click(function() {
 	
 	// Clear message and recipient divs
 	$('#message-output').html("");
-	$('#recipient-output').html("");
+	$('#total-output').html("");
 		
-	// Remove any stickers
-	$('.stickers_on_card').remove();
+	// Remove any shapes
+	$('.shapes_on_card').remove();
 
 });
 

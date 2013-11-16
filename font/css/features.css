@@ -4,7 +4,7 @@ Pick a metal
 .metals {
 	width:40px;
 	height:40px;
-	border:1px solid grey;
+	border:1px solid #a9a9a9;
 	float:left;
 	cursor: pointer;
 }
@@ -13,7 +13,7 @@ Pick a metal
 }
 #bronze {
 
-	background:gold;
+	background: #975a38;
 }
 
 
@@ -75,14 +75,14 @@ so give it relative and don't reposition it anywhere.
 	padding-top:2px;
 }
 /*-------------------------------------------------------------------------------------------------
-Stickers
+Shapes
 -------------------------------------------------------------------------------------------------*/
-.stickers {
+.shapes {
 	cursor:pointer;
 	z-index:2; /* Make sure it's above the card */
 }
 /* Any time you use draggable you may want to use absolute position property*/
-.stickers_on_card {
+.shapes_on_card {
 	position:absolute;
 	top:0px;
 	left:0px;
