@@ -5,15 +5,15 @@ This is because we want this listener to also apply to the Google Image Stickers
 added *after* the page loads. In order to do this, on has to be used, and we have to delegate the
 listening for .stickers to the #controls div.
 -------------------------------------------------------------------------------------------------*/	
-//$('#controls').on('click', '.shapes', function() {
-$('.stickers').click(function(){
+$('#controls').on('click', '.shapes', function() {
+//$('.shapes').click(function(){
 
 	// Alternative method: Find which image was clicked then find image source
-	var new_image = "<img src='"++"'></img>";
-	$('#canvas').html(new_image);
+	//var new_image = "<img src='"+ +"'></img>";
+	//$('#canvas').html(new_image);
 
 	// Clone whatever sticker was clicked
-	//var new_image = $(this).clone();
+	var new_image = $(this).clone();
 	//console.log(new_image);
 
 	new_image.addClass('stickers_on_card');
