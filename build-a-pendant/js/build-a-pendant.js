@@ -76,7 +76,8 @@ $('.shapes').click(function(){
 
 
 /*-------------------------------------------------------------------------------------------------
-Toggle, chain specs hidden until clicked
+Toggle, chain specs hidden until clicked ... 
+see: http://www.metaltoad.com/blog/detect-which-element-was-clicked-using-jquery
 -------------------------------------------------------------------------------------------------*/
 
 // Implementing toggle
@@ -114,9 +115,12 @@ $('.chains').click (function() {
 });*/
 
 
+	$('button').click();
 
+	function calculate() {
 
-
+		console.log('test');
+	}			
 
 
 
