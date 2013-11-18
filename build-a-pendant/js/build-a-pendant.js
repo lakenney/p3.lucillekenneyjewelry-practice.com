@@ -89,16 +89,20 @@ $('.chains').click (function() {
 	// since I only want to show those lengths
 	//var selected-chain = $(this).attr('id');
 	var chain_id = $(this).attr('id');
-	var chain_selected = chain_id;
-	//var length_selected = chain_selected + $('.rice')
-	console.log(chain_selected);
+	var length_value = $('.class').val() ;
+	// var thickness = ...;
+	console.log(length_value);
 
 	// Now I only want to show lengths of chain_selected
 	// so now i need chain_selected and chain_class?
+	$('.'+chain_id).toggleClass('show-length');	
 
-	// Toggling show-length on after chain image is clicked
-  	$('.item-length').toggleClass('show-length');
+	// Toggling show-thickness on after chain length is clicked
+	//$('.'+length_value).toggleClass('show-length');	
+  	//$('.item-length').toggleClass('show-length');
 });
+
+
 
 // Bind click event listener on the body
 // Hide list if user clicks anywhere off of the list itself.
@@ -115,12 +119,8 @@ $('.chains').click (function() {
 });*/
 
 
-	$('button').click();
 
-	function calculate() {
 
-		console.log('test');
-	}			
 
 
 
