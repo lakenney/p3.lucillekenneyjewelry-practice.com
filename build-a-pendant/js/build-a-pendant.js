@@ -24,14 +24,20 @@ $('input:radio').change(function () {
 
  });
 
-function printCost($this,shape,size,metal) {
+function printCost($this,shapes,size,metal) {
 
+		//var clicked = $(this);
+		//var value   = clicked.val();
+		            
+		//console.log(value);
 
-		/*if((shapes == $heart) && (size == $lg)) {
+		if($this.val() == shapes) {
+		
+			console.log(shapes);
+			//console.log($this.val());
 
-			//console.log('large heart.');
 		}
-		else if(shapes == $heart && size == $md) {
+		/*else if(shapes == $heart && size == $md) {
 			
 			//console.log('medium heart');
 		}
@@ -43,7 +49,8 @@ function printCost($this,shape,size,metal) {
 		// console.log(shapes);
 		// console.log(metals);
 		// console.log(size);
-		console.log($this.val());
+		//console.log($this.val());
+		//console.log(printCost)
 
 
 }
