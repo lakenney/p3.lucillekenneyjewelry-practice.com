@@ -24,17 +24,23 @@ $('input:radio').change(function () {
 
  });
 
-function printCost($this,shapes,size,metal) {
+function printCost($this,shapes,size,metals) {
 
 		//var clicked = $(this);
-		//var value   = clicked.val();
-		            
+		//var shapeClicked   = $('[name|=shapes]:checked').val();
+		var shapeClicked = shapes;
+		var sizeClicked = size;
+		var metalsClicked = metals;
 		//console.log(value);
 
 		if($this.val() == shapes) {
 		
-			console.log(shapes);
+			//console.log(shapes);
+			//shapeClicked = shapes;
 			//console.log($this.val());
+			console.log(shapeClicked);
+			console.log(sizeClicked);
+			console.log(metalsClicked);
 
 		}
 		/*else if(shapes == $heart && size == $md) {
