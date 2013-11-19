@@ -1,17 +1,60 @@
 /*-------------------------------------------------------------------------------------------------
 Shapes
-Note here we use the .on() method instead of just .click()
-This is because we want this listener to also apply to the Google Image Stickers which are
-added *after* the page loads. In order to do this, on has to be used, and we have to delegate the
-listening for .stickers to the #controls div.
 -------------------------------------------------------------------------------------------------*/	
-//$('#controls').on('click', '.shapes', function() {
+
+
+
+$('input:radio').change(function () {
+    var $this = $(this);
+    var shapes =  $('[name|=shapes]:checked').val();
+    var metals =  $('[name|=metals]:checked').val();
+    var size =  $('[name|=size]:checked').val();
+    
+    //console.log('radio clicked');
+    //console.log(group1Val);
+
+    var imageURL = "images/" + shapes + "-" + size + "-" + metals + ".png";
+
+    //console.log(imageURL);
+
+
+    var newImage = "<img src='" + imageURL + "'></img";
+	$('#canvas').html(newImage);
+	printCost($this,shapes,size,metals);
+
+ });
+
+function printCost($this,shape,size,metal) {
+
+
+		/*if((shapes == $heart) && (size == $lg)) {
+
+			//console.log('large heart.');
+		}
+		else if(shapes == $heart && size == $md) {
+			
+			//console.log('medium heart');
+		}
+		else(shapes == $heart && size == $sm) {
+
+			//console.log('small heart');
+		}*/	
+
+		// console.log(shapes);
+		// console.log(metals);
+		// console.log(size);
+		console.log($this.val());
+
+
+}
+
+
+/*//$('#controls').on('click', '.shapes', function() {
 $('.shapes').click(function(){
 
 	var imageID = $(this).attr('id');
 	//var size = // the id of the button clicked;
 	//var metal = // the id of the radiobutton that is checked
-
 
 	var imageURL = "images/" + imageID + "-" + ".png";
 	//var imageURL = "images/" + imageID + "-" + size + "-" + metal + ".png";
@@ -27,10 +70,6 @@ $('.shapes').click(function(){
 	$('#canvas').html(newImage);
 	console.log(canvas);
 
-
-	// Clone whatever sticker was clicked
-	//var new_image = $(this).clone();
-	//console.log(new_image);
 
 	//new_image.addClass('shapes_on_card');
 
@@ -73,6 +112,7 @@ $('.shapes').click(function(){
 	});
 
 	// build image url
+*/
 
 
 /*-------------------------------------------------------------------------------------------------
