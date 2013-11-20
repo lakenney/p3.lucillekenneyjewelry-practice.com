@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<head><title></title>
+		<style>
+			div{width:200px;height:200px;background-color:blue;margin-bottom:20px;margin-right:20px;float:left;cursor:pointer;}
+			.x {background-color:yellow;}
+		</style>
+	</head>
+	<body>
+		<div id="1"></div>
+		<div id="2"></div>
+		<div id="3"></div>
+		
+		<div class="x" id="a_1"></div>
+		<div class="x" id="a_2"></div>
+		<div class="x" id="a_3"></div>
+		<script>
+			divs = document.getElementsByTagName("div");
+			for (i=0;i<divs.length;i++) {
+				divs[i].addEventListener("click",function() {
+					id = this.id;
+					if (id.indexOf("a_") > -1) {
+						id = id.replace("a_","");
+						x =  document.getElementById(id);
+						x.style.backgroundColor = "green";					
+					} else {
+						x =  document.getElementById("a_" + id);
+						x.style.backgroundColor = "red";
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

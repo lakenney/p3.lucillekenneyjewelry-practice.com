@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------------------------------------------
 Pick a metal
 -------------------------------------------------------------------------------------------------*/
-.metals {
+/*.metals {
 	width:40px;
 	height:40px;
 	border:1px solid #a9a9a9;
@@ -12,9 +12,8 @@ Pick a metal
 	background-color:silver;
 }
 #bronze {
-
 	background: #975a38;
-}
+}*/
 
 
 /*-------------------------------------------------------------------------------------------------
@@ -60,6 +59,7 @@ so give it relative and don't reposition it anywhere.
 	top:500px;
 	height:50px;
 	width:100%;
+	z-index: 2;
 }
 
 /*#message-output {
@@ -72,6 +72,16 @@ so give it relative and don't reposition it anywhere.
 #message-error {
 	/*color: red;*/
 	padding-top:2px;
+}
+
+#chain-cost-output {
+	text-align:right;
+	font-size:35px;
+	position:absolute;
+	top:500px;
+	height:50px;
+	width:100%;
+	z-index: 2;
 }
 /*-------------------------------------------------------------------------------------------------
 Shapes

@@ -1,11 +1,8 @@
 /*-------------------------------------------------------------------------------------------------
 Shapes
 -------------------------------------------------------------------------------------------------*/	
-
-
-
 $('input:radio').change(function () {
-    var $this = $(this);
+    //var $this = $(this);
     var shapes =  $('[name|=shapes]:checked').val();
     var metals =  $('[name|=metals]:checked').val();
     var size =  $('[name|=size]:checked').val();
@@ -20,45 +17,153 @@ $('input:radio').change(function () {
 
     var newImage = "<img src='" + imageURL + "'></img";
 	$('#canvas').html(newImage);
-	printCost($this,shapes,size,metals);
+	printCost(shapes,size,metals);
 
  });
 
-function printCost($this,shapes,size,metals) {
-
-		//var clicked = $(this);
-		//var shapeClicked   = $('[name|=shapes]:checked').val();
-		var shapeClicked = shapes;
-		var sizeClicked = size;
-		var metalsClicked = metals;
-		//console.log(value);
-
-		if($this.val() == shapes) {
+function printCost(shape,size,metal) {
 		
-			//console.log(shapes);
+	//console.log(shape);
+
+	// Nested if statements
+	// and then size and metals
+
+	var silver_price_grm = 2.22;
+	var bronze_price_grm = .25;
+
+	if(shape == "circle") {
+		if (size == "sm") {
+			if (metal == "silver") {
+				var sm_circle_weight_grm = 14.18;
+				pendantCost = silver_price_grm * sm_circle_weight_grm;
+				//(pendantCost + ' Small silver circle dimensions ...');
+			} 
+			else if (metal == "bronze") {
+				var sm_circle_weight_grm = 28.35;
+				pendantCost = bronze_price_grm * sm_circle_weight_grm;
+				//console.log('This is small bronze circle')
+			}
+		} 
+
+		else if (size == "md") {
+			if (metal == "silver") {
+				var md_circle_weight_grm = 42.52;
+				pendantCost = silver_price_grm * md_circle_weight_grm;
+				//console.log('This is medium silver circle')
+			} 
+			else if (metal == "bronze") {
+				var md_circle_weight_grm = 51.03;
+				pendantCost = bronze_price_grm * md_circle_weight_grm;	
+				//console.log('This is medium bronze circle')
+			}
+		} 
+
+		else if (size =="lg") {
+			if (metal == "silver") {
+				var lg_circle_weight_grm = 56.7;
+				pendantCost = silver_price_grm * lg_circle_weight_grm;
+				//console.log('This is large silver circle')
+			} 
+			else if (metal == "bronze") {
+				var lg_circle_weight_grm = 62.36;
+				pendantCost = bronze_price_grm * lg_circle_weight_grm;
+				//console.log('This is large bronze circle')
+			}
+		}
+	} 
+
+	else if (shape == "square") {
+		if(size == "sm") {
+			if (metal == "silver") {
+				var sm_square_weight_grm = 36.855;
+				pendantCost = silver_price_grm * sm_square_weight_grm;
+				//console.log('This is small silver square')
+			} 
+			else if (metal == "bronze") {
+				var sm_square_weight_grm = 42.525;
+				pendantCost = bronze_price_grm * sm_square_weight_grm;
+				//console.log('This is small bronze square')
+			}
+		} 
+
+		else if (size == "md") {
+			if (metal == "silver") {
+				var md_square_weight_grm = 51.03;
+				pendantCost = silver_price_grm * md_square_weight_grm;
+				//console.log('This is medium silver square')
+
+			} else if (metal == "bronze") {
+				var md_square_weight_grm = 59.535;
+				pendantCost = bronze_price_grm * md_square_weight_grm;
+				//console.log('This is medium bronze square')
+			}
+		} 
+
+		else if (size =="lg") {
+			if (metal == "silver") {
+				var lg_square_weight_grm = 65.205;
+				pendantCost = silver_price_grm * lg_square_weight_grm;
+				//console.log('This is large silver square')
+			} 
+			else if (metal == "bronze") {
+				var lg_square_weight_grm = 70.875;
+				pendantCost = bronze_price_grm * lg_square_weight_grm;
+				//console.log('This is large bronze square')
+			}
+		}
+	} 
+
+	else if (shape == "heart") {
+		if(size == "sm") {
+			if (metal == "silver") {
+				var sm_heart_weight_grm = 42.53;
+				pendantCost = silver_price_grm * sm_heart_weight_grm;
+				//console.log('This is small silver heart')
+			} 
+			else if (metal == "bronze") {
+				var sm_heart_weight_grm = 48.2;
+				pendantCost = bronze_price_grm * sm_heart_weight_grm;				
+				//console.log('This is small bronze heart')
+			}
+		} 
+
+		else if (size == "md") {
+			if (metal == "silver") {
+				var md_heart_weight_grm = 56.7;
+				pendantCost = silver_price_grm * md_heart_weight_grm;				
+				//console.log('This is medium silver heart')
+			} 
+			else if (metal == "bronze") {
+				var md_heart_weight_grm = 62.37;
+				pendantCost = bronze_price_grm * md_heart_weight_grm;					
+				//console.log('This is medium bronze heart')
+			}
+		} else if (size =="lg") {
+			if (metal == "silver") {
+				var lg_heart_weight_grm = 70.88;
+				pendantCost = silver_price_grm * lg_heart_weight_grm;
+				//console.log('This is large silver heart')
+			} else if (metal == "bronze") {
+				var lg_heart_weight_grm = 76.55;
+				pendantCost = bronze_price_grm * lg_heart_weight_grm;	
+				//console.log('This is large bronze heart')
+			}
+		}
+
 			//shapeClicked = shapes;
 			//console.log($this.val());
-			console.log(shapeClicked);
-			console.log(sizeClicked);
-			console.log(metalsClicked);
 
-		}
-		/*else if(shapes == $heart && size == $md) {
-			
-			//console.log('medium heart');
-		}
-		else(shapes == $heart && size == $sm) {
-
-			//console.log('small heart');
-		}*/	
+			//console.log(shapeClicked);
+			//$('#output').html(pendantCost);
 
 		// console.log(shapes);
 		// console.log(metals);
 		// console.log(size);
 		//console.log($this.val());
 		//console.log(printCost)
+	}
 
-
+	$('#output').html(pendantCost);
 }
 
 

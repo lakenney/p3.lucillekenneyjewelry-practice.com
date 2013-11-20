@@ -28,9 +28,10 @@
 	<input type='checkbox' name='services' value='500'>Windows<br>
 		
 	<br><br>
-	
 
 	<button>Recalculate</button>
+
+	Total: $<span id='output'></span>
 	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	
@@ -41,20 +42,35 @@
 
 		// If it's just this function I can pass it to the click listener.
 		$('button').click(calculate);
-
+		// We can attach the same function to other elements
+		$('input,select').change(calculate);
 
 		function calculate() {
 
 			var budget 		= $('#budget').val();
 			var rooms 		= $('#room_count').val();
 			var services 	= $('input[name=services]:checked');
+			// Defalt to zero need this to exist outside of the loop
+			var total		= 0;
 
 			//console.log(services);
 			services.each(function() {
+				// declared inside the loop because everytime through it will be different and the 
+				// new they will write over themselves
+				var price = $(this).val();
 
-				console.log($(this).val());
+				var amount = price * rooms;
+				//console.log(amount);
 
-			});
+				// Total declared out of the loop because I don't want it to be reset every time
+				// Don't use var here because it will get reset.
+				total = total + amount;
+
+				//console.log($(this).val());
+
+			}); // end of loop
+
+			$('#output').html(total);
 		}
 
 
