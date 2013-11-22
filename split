@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Pendants</title>
+	
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/features.css" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+
+	<script>
+
+		var str = '4.5';
+		var substr = str.split('.');
+		// substr[0] contains "4"
+		// substr[1] contains "5"
+	</script>
+</body>
+</html>
