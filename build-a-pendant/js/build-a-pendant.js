@@ -27,7 +27,6 @@ function printCost(shape,size,metal) {
 
 	// Nested if statements
 	// and then size and metals
-
 	var silver_price_grm = 2.22;
 	var bronze_price_grm = .25;
 
@@ -165,42 +164,16 @@ function printCost(shape,size,metal) {
 
 	$('#output').html(pendantCost);
 }
+
 /*-------------------------------------------------------------------------------------------------
-Shapes
+Round up to the penny
 -------------------------------------------------------------------------------------------------*/	
-// Round up to the penny
-// see also http://stackoverflow.com/questions/3605967/round-half-pennies-up	
-
-// index of  where the decimal point is
-// substring  get $ amount store in a variable 
-// substring to get the cents (2 nums after the decimal)
-// substring to get the 100th or 3rd place after the decimal
-// 3 distinct parts
-// round up the 10th add the result of that to the pennies
-//the decimal place 
-// slice up everything before decimal place and everything after the decimal place
-// take the first 3 numbers 
-// 
-
 function roundPenny(pendantCost){
 
-var original = pendantCost;
+	var original = pendantCost;
 
-// Round 'original' to two decimals
-//var result = Math.round(original*100)/100
-return pendantCost;
-
-//var str = '4.5';
-//var substr = str.split('.');
-// substr[0] contains "4"
-// substr[1] contains "5"
-
-//var result = Math.round(original*100/100;)
-
-//var money = substr;
-//var pennies = money * 100;
-//money = Math.round(pennies) / 100;
-
+	// round 'original' to two decimals
+	return Math.round(original*100)/100;
 }
 
 
