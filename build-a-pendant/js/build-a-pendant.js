@@ -162,6 +162,7 @@ function printCost(shape,size,metal) {
 		//console.log(printCost)
 	}
 
+	pendantCost = roundPenny(pendantCost);
 	$('#output').html(pendantCost);
 }
 
@@ -173,9 +174,10 @@ function roundPenny(pendantCost){
 	var original = pendantCost;
 
 	// round 'original' to two decimals
-	return Math.round(original*100)/100;
-}
+	result = Math.round(original*100)/100;
 
+	return result;
+}
 
 /*//$('#controls').on('click', '.shapes', function() {
 $('.shapes').click(function(){
