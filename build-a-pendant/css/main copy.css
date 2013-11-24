@@ -130,71 +130,18 @@ Output right side background
 	width:340px;
 	margin:0px auto;
 }
+
 #canvas {
-  border: solid 2px red;
-  width:338px;
-  height:469px;
-  position:relative;
-  z-index:0;
-  overflow:hidden;
-}
-/*#pendant-container {
-  border: solid 3px orange;
-  position:absolute;
-  width:160px;
-  height:140px;
-  top: 50%;
-  display: table;
-}
-#pendant {
-  border: solid 3px green;
-  position:relative;
-  width:160px;
-  height:140px;
-  top: 50%;
-  display: table;
-}*/
-#pendant-container {
-  border: solid 5px yellow;
-  position: absolute;
-  width:160px;
-  height:135px;
-  top: 50%;
-  display: table;
-}
-#pendant {
-  border: solid 3px black;
-  position: relative; 
-  /*top: -50%;*/
-  z-index: 5;
-  vertical-align: middle;
-  display: table-cell;
-}
-#message-window {
-  border: solid 5px yellow;
-  position: absolute;
-  width:160px;
-  height:140px;
-  top: 50%;
-  display: table;
-  text-align: center;
-}
-#message-output {
-  border: solid 3px black;
-  position: relative; 
-  /*top: -50%;*/
-  z-index: 5;
-  vertical-align: middle;
-  display: table-cell;
-}
-/*#canvas {
 	border: solid 2px red;
 	width:338px;
 	height:469px;
 	position:relative;
 	top:33px;
+	/*left:16px;*/
 	z-index:0;
 	overflow:hidden;
+	/* This is how the W3C recommends you center text vertically until CSS 3 support is available.
+	thttp://webdesign.about.com/od/beginningcss/a/aa012207.htm*/
 	margin-left: auto;
   margin-right: auto;
   min-height: 12em;
@@ -219,18 +166,22 @@ Output right side background
   text-align: center;
   width:160px;
   height:140px;
+  /*left:16px;*/
   z-index:5;
   overflow:hidden;
+  /* This is how the W3C recommends you center text vertically until CSS 3 support is available.
+  thttp://webdesign.about.com/od/beginningcss/a/aa012207.htm*/
 }
 #message-output {
-  display: table-cell;
+  /*display: table-cell;
   text-align:center;
   height:150px;
-  min-height: 12em;
+  min-height: 12em;*/
+  /*font-size:15px;*/
   z-index: 6; 
 }
 
-#newImage {
+/*#newImage {
 	position:absolute;
 	top:333px;
 	z-index:2;

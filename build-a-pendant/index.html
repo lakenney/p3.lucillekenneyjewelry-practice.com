@@ -26,32 +26,39 @@
 			<!--http://jsfiddle.net/pV8yg/-->
 			<hr>
 				<h2>Pick a shape</h2>
-					<input type="radio" name="shapes" value="circle" checked>circle
+				<div class="radioLeft">
+					<label><input type="radio" name="shapes" value="circle" checked>
+					circle</label>
+					<input type="radio" name="shapes" value="square">
+					
+					<label>square</label>
+					<input type="radio" name="shapes" value="heart">
+					<label>heart</label>
 					<br>
-					<input type="radio" name="shapes" value="square">square
 					<br>
-					<input type="radio" name="shapes" value="heart">heart
+				</div>
 					<br><br>
 			<hr>
 				<h2>Pick a metal</h2>
+				<div class="radioLeft">
 					<input type="radio" name="metals" value="silver" checked>silver
-					<br>
-					<input type="radio" name="metals" value="bronze">bronze
-					<br>
+					<input type="radio" name="metals" value="bronze">
+					bronze<br>
+				</div><!--radioLeft-->
 					<br><br>
 			<hr>
 				<h2>Pick a size</h2>
 					<input type="radio" name="size" value="sm">sm
+					<input type="radio" name="size" value="md" checked>
+					md
+					<input type="radio" name="size" value="lg">
+					lg
+                    <br>
 					<br>
-					<input type="radio" name="size" value="md" checked>md
-					<br>
-					<input type="radio" name="size" value="lg">lg
-					    
-					    <h3>Output</h3>
-							Pendant cost: $<span id='output'></span>
-							<br><br>
+					This pendant costs: $<span id='output'></span>
+					<br><br>
 
-						<button>Recalculate</button>
+					<button>Recalculate</button>
 
 
 		<!-- Shape picker -->	
@@ -104,7 +111,7 @@
 		-->
 
 		<!-- Message -->	
-			<h2>Type a message</h2>	
+			<h2>Type a message</h2>
 			<input type='text' id='message' class="changeMe" maxlength="14"> 
 			<div id='message-error'>Max 14 characters</div>
 
@@ -217,18 +224,22 @@
 	
 		<div id='preview-background'>
 			<div id='canvas'>
-				<!-- prepend new content -->
-				<div id='message-output'></div>
-				Total: $<span id='total'>0.00</span> <br><br>
-			</div>
-		</div>
+				<div id='pendant-container'>
+					<div id='pendant'></div>
+				</div><!--pendant-container-->
+				<div id='message-window'>
+					<div id='message-output'></div>
+				</div><!--message-window-->	
+
+			</div><!--canvas-->
+			Total: $<span id='total'>0.00</span> <br><br>
+		</div><!--end preview-background-->
 		
 		<!-- Buttons -->
 		<input type='button' id='refresh-btn' value='Start over'>
 		<input type='button' id='print-btn' value='Print'>
-	</div>
+	</div><!-- end preview-->
 
-	
 </div><!--Wrapper div-->
 
 <script src="js/build-a-pendant.js"></script>

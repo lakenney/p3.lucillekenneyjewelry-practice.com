@@ -15,30 +15,6 @@ Pick a metal
 	background: #975a38;
 }*/
 
-
-/*-------------------------------------------------------------------------------------------------
-Texture picker
--------------------------------------------------------------------------------------------------*/
-.textures {
-	width:80px;
-	height:40px;
-	border:1px solid grey;
-	float:left;
-	cursor: pointer;
-}
-#swirls {
-	background-image: url('../images/texture-swirls.png');
-}
-#paper {
-	background-image: url('../images/texture-paper.png');
-}
-#cloth {
-	background-image: url('../images/texture-cloth.png');
-}
-#circles {
-	background-image: url('../images/texture-circles.png');
-}
-
 /*-------------------------------------------------------------------------------------------------
 Message
 -------------------------------------------------------------------------------------------------*/
@@ -52,23 +28,21 @@ caviot to absolute position ... the parent element has to have a position proper
 so give it relative and don't reposition it anywhere.
 */
 
-#message-output {
+/*#message-output {
 	text-align:right;
 	font-size:35px;
 	position:absolute;
 	top:500px;
 	height:50px;
 	width:100%;
-	z-index: 2;
-}
-
-/*#message-output {
-	text-align:center;
-	font-size:30px;
-	width:100%;
-	position:absolute;
-	top:150px;	
+	z-index: 5;
 }*/
+
+
+span {
+  display: table-cell;
+  vertical-align: middle;
+}
 #message-error {
 	/*color: red;*/
 	padding-top:2px;
@@ -76,11 +50,7 @@ so give it relative and don't reposition it anywhere.
 
 #chain-cost-output {
 	text-align:right;
-	font-size:35px;
-	position:absolute;
-	top:500px;
-	height:50px;
-	width:100%;
+	font-size:12px;
 	z-index: 2;
 }
 /*-------------------------------------------------------------------------------------------------

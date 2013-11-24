@@ -14,9 +14,8 @@ $('input:radio').change(function () {
 
     //console.log(imageURL);
 
-
     var newImage = "<img src='" + imageURL + "'></img";
-	$('#canvas').html(newImage);
+	$('#pendant').html(newImage);
 	printCost(shapes,size,metals);
 
  });
@@ -159,7 +158,6 @@ function printCost(shape,size,metal) {
 		// console.log(metals);
 		// console.log(size);
 		//console.log($this.val());
-		//console.log(printCost)
 	}
 
 	pendantCost = roundPenny(pendantCost);
@@ -176,6 +174,7 @@ function roundPenny(pendantCost){
 	// round 'original' to two decimals
 	result = Math.round(original*100)/100;
 
+	// Return to printCost
 	return result;
 }
 
@@ -367,22 +366,8 @@ Message picker
 });*/
 
 /*-------------------------------------------------------------------------------------------------
-(Bonus) Font chooser
--------------------------------------------------------------------------------------------------*/
-$("#fs").change(function() {
-    //alert($(this).val());
-    $('.changeMe').css("font-family", $(this).val());
-});
-
-$("#size").change(function() {
-    $('.changeMe').css("font-size", $(this).val() + "px");
-});
-
-
-/*-------------------------------------------------------------------------------------------------
 Message
 -------------------------------------------------------------------------------------------------*/
-
 $('#message').keyup(function() {
 
 	// Find out what is in the field
@@ -428,6 +413,17 @@ $('#message').keyup(function() {
                 // Split on each letter i.e., no space in ''
                 //var random_word_array = random_word.split('');
 
+/*-------------------------------------------------------------------------------------------------
+(Bonus) Font chooser
+-------------------------------------------------------------------------------------------------*/
+$("#fs").change(function() {
+    //alert($(this).val());
+    $('.changeMe').css("font-family", $(this).val());
+});
+
+$("#size").change(function() {
+    $('.changeMe').css("font-size", $(this).val() + "px");
+});
 
 /*-------------------------------------------------------------------------------------------------
 Bonus! Ability to drag over (rather than click-to-add) new stickers
@@ -525,7 +521,7 @@ $('#refresh-btn').click(function() {
 	$('#total-output').html("");
 		
 	// Remove any shapes
-	$('.shapes_on_card').remove();
+	$('.shapes').remove();
 
 });
 
