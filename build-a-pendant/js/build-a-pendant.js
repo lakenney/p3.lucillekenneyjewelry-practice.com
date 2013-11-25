@@ -308,7 +308,7 @@ changeMaxLength to be called from functions that
 react to the pendant size changing (line 4), and the font size changing (line 301)
 -------------------------------------------------------------------------------------------------*/
 // Global variable that can be accessed by multiple functions
-var maxMessageLength = 0;
+/*var maxMessageLength = 0;
 
 function changeMaxLength {
 
@@ -318,19 +318,6 @@ function changeMaxLength {
 	// call that function that sets the max length in two cases -- 
 	//	1)if the font size is changed (in the function that starts on like 302)
 	//  2) And when the pendant size changes -- so that's your function that starts on line 4
-
-	/*if(shape == 'circle' && size == 'sm') {
-		if (font-size == "12") {
-				// What is the max amount of letters that fit in the small circle
-				maxMessageLength = 12;
-			} 
-			else if (font-size == "16") {
-				maxMessageLength = 10;
-			}
-		} 
-		else if (shape == "square") {
-				maxMessageLength = 11;
-		}*/
 
 	if(shape == "circle") {
 		if (size == "sm") {
@@ -422,7 +409,7 @@ function changeMaxLength {
 		}
 	} 
 
-}
+}*/
 
 
 /*-------------------------------------------------------------------------------------------------
