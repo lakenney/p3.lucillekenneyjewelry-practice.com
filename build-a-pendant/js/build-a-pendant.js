@@ -308,6 +308,7 @@ changeMaxLength to be called from functions that
 react to the pendant size changing (line 4), and the font size changing (line 301)
 -------------------------------------------------------------------------------------------------*/
 // Global variable that can be accessed by multiple functions
+// passed it to line 261 in place of the hard coded 14
 /*var maxMessageLength = 0;
 
 function changeMaxLength {
