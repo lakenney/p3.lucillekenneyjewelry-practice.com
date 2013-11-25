@@ -90,7 +90,8 @@ function printCost(shape,size,metal) {
 				pendantCost = silver_price_grm * md_square_weight_grm;
 				//console.log('This is medium silver square')
 
-			} else if (metal == "bronze") {
+			} 
+			else if (metal == "bronze") {
 				var md_square_weight_grm = 59.535;
 				pendantCost = bronze_price_grm * md_square_weight_grm;
 				//console.log('This is medium bronze square')
@@ -243,6 +244,186 @@ $('.shapes').click(function(){
 	// build image url
 */
 
+/*-------------------------------------------------------------------------------------------------
+Message
+-------------------------------------------------------------------------------------------------*/
+$('#message').keyup(function() {
+
+	// Find out what is in the field
+    var value = $(this).val();
+    //console.log(value);
+
+    // How many characters did the user type in
+    var how_many_characters = value.length;
+    //console.log(how_many_characters);
+
+    // Subtract the number of characters typed in from the max amount of char
+    var how_many_left = 14 - how_many_characters;
+
+    // If number of characters is zero turn it red
+   	if(how_many_left == 0) {
+    	$('#message-error').css('color', 'red');
+    }
+    // If number of characters is less than 5 turn it orange
+    else if(how_many_left < 5){
+    	$('#message-error').css('color', 'orange');
+    }
+
+    // Concatenate message with how_many_left
+    $('#message-error').html('You have ' + how_many_left + ' characters left');
+
+    /*if(how_many_characters == 14){
+    	$('#message-error').html('You\'ve typed the max amount of characters!');
+    }
+    else {
+		$('#message-error').html('');
+
+    }*/
+
+	// Inject the message into the output div on the canvas
+	$('#message-output').html(value);
+        
+	// Note: The "maxlength" attribute on the HTML element will prevent the user from entering more than 14 characters
+	// <input type='text' id='recipient' maxlength="14"> 
+
+});
+				// Taken from word game ... use to setup type on pendant split on space
+                // Split on each letter i.e., no space in ''
+                //var random_word_array = random_word.split('');
+
+/*-------------------------------------------------------------------------------------------------
+(Bonus) Font chooser
+-------------------------------------------------------------------------------------------------*/
+$("#fs").change(function() {
+    //alert($(this).val());
+    $('.changeMe').css("font-family", $(this).val());
+});
+
+$("#size").change(function() {
+    $('.changeMe').css("font-size", $(this).val() + "px");
+});
+
+/*-------------------------------------------------------------------------------------------------
+changeMaxLength to be called from functions that 
+react to the pendant size changing (line 4), and the font size changing (line 301)
+-------------------------------------------------------------------------------------------------*/
+// Global variable that can be accessed by multiple functions
+var maxMessageLength = 0;
+
+function changeMaxLength {
+
+	// I want to change the length when the pendant size changes and the font size changes.
+	// nested if statements that look at both the current pendant size and shape, and the 
+	// current font size, and set maxMessageLength appropriately
+	// call that function that sets the max length in two cases -- 
+	//	1)if the font size is changed (in the function that starts on like 302)
+	//  2) And when the pendant size changes -- so that's your function that starts on line 4
+
+	/*if(shape == 'circle' && size == 'sm') {
+		if (font-size == "12") {
+				// What is the max amount of letters that fit in the small circle
+				maxMessageLength = 12;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 10;
+			}
+		} 
+		else if (shape == "square") {
+				maxMessageLength = 11;
+		}*/
+
+	if(shape == "circle") {
+		if (size == "sm") {
+			// What is the max amount of letters that fit in the small circle
+			if (font-size == "12") {
+				maxMessageLength = 12;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 12;
+			}
+		} 
+
+		else if (size == "md") {
+			if (font-size == "12") {
+				maxMessageLength = 13;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 11;
+			}
+		} 
+
+		else if (size == "lg") {
+			if (font-size == "12") {
+				maxMessageLength = 10;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 8;
+			}
+		}
+	} 
+
+	else if (shape == "square") {
+		if (size == "sm") {
+			// What is the max amount of letters that fit in the small circle
+			if (font-size == "12") {
+				maxMessageLength = 12;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 12;
+			}
+		} 
+
+		else if (size == "md") {
+			if (font-size == "12") {
+				maxMessageLength = 13;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 11;
+			}
+		} 
+
+		else if (size == "lg") {
+			if (font-size == "12") {
+				maxMessageLength = 10;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 8;
+			}
+		}
+	} 
+
+	else if (shape == "heart") {
+		if (size == "sm") {
+			// What is the max amount of letters that fit in the small circle
+			if (font-size == "12") {
+				maxMessageLength = 12;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 12;
+			}
+		} 
+
+		else if (size == "md") {
+			if (font-size == "12") {
+				maxMessageLength = 13;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 11;
+			}
+		} 
+
+		else if (size == "lg") {
+			if (font-size == "12") {
+				maxMessageLength = 10;
+			} 
+			else if (font-size == "16") {
+				maxMessageLength = 8;
+			}
+		}
+	} 
+
+}
+
 
 /*-------------------------------------------------------------------------------------------------
 Toggle, chain specs hidden until clicked ... 
@@ -287,12 +468,6 @@ $('.chains').click (function() {
   }
 });*/
 
-
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------
 Remove a shapes from the canvas
 -------------------------------------------------------------------------------------------------*/
@@ -303,7 +478,6 @@ $('#canvas').on('click', '.shapes', function() {
 	var new_image = $(this).remove();
 
 });
-
 
 /*-------------------------------------------------------------------------------------------------
 Color picker
@@ -364,66 +538,6 @@ Message picker
 	//console.log("You clicked this message".$message);
 
 });*/
-
-/*-------------------------------------------------------------------------------------------------
-Message
--------------------------------------------------------------------------------------------------*/
-$('#message').keyup(function() {
-
-	// Find out what is in the field
-    var value = $(this).val();
-    //console.log(value);
-
-    // How many characters did the user type in
-    var how_many_characters = value.length;
-    //console.log(how_many_characters);
-
-    // Subtract the number of characters typed in from the max amount of char
-    var how_many_left = 14 - how_many_characters;
-
-    // If number of characters is zero turn it red
-   	if(how_many_left == 0) {
-    	$('#message-error').css('color', 'red');
-
-    }
-    // If number of characters is less than 5 turn it orange
-    else if(how_many_left < 5){
-    	$('#message-error').css('color', 'orange');
-    }
-
-    // Concatenate message with how_many_left
-    $('#message-error').html('You have ' + how_many_left + ' characters left');
-
-    /*if(how_many_characters == 14){
-    	$('#message-error').html('You\'ve typed the max amount of characters!');
-    }
-    else {
-		$('#message-error').html('');
-
-    }*/
-
-	// Inject the message into the output div on the canvas
-	$('#message-output').html(value);
-        
-	// Note: The "maxlength" attribute on the HTML element will prevent the user from entering more than 14 characters
-	// <input type='text' id='recipient' maxlength="14"> 
-
-});
-				// Taken from word game ... use to setup type on pendant split on space
-                // Split on each letter i.e., no space in ''
-                //var random_word_array = random_word.split('');
-
-/*-------------------------------------------------------------------------------------------------
-(Bonus) Font chooser
--------------------------------------------------------------------------------------------------*/
-$("#fs").change(function() {
-    //alert($(this).val());
-    $('.changeMe').css("font-family", $(this).val());
-});
-
-$("#size").change(function() {
-    $('.changeMe').css("font-size", $(this).val() + "px");
-});
 
 /*-------------------------------------------------------------------------------------------------
 Bonus! Ability to drag over (rather than click-to-add) new stickers
@@ -521,7 +635,7 @@ $('#refresh-btn').click(function() {
 	$('#total-output').html("");
 		
 	// Remove any shapes
-	$('.shapes').remove();
+	$('[name|=shapes]:checked').remove();
 
 });
 
