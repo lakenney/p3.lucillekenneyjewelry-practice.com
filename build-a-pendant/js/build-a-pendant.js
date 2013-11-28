@@ -17,7 +17,7 @@ $('input:radio').change(function () {
     var newImage = "<img src='" + imageURL + "'></img";
 	$('#pendant').html(newImage);
 	printCost(shapes,size,metals);
-	maxMessageLength(shape,size,fontsize);
+	//maxMessageLength(shape,size,fontsize);
  });
 
 function printCost(shape,size,metal) {
@@ -301,7 +301,7 @@ $("#fs").change(function() {
 
 $("#size").change(function() {
     $('.changeMe').css("fontsize", $(this).val() + "px");
-	$("#size") = maxMessageLength(shape,size,fontsize);
+	//$("#size") = maxMessageLength(shape,size,fontsize);
 
 });
 
