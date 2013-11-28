@@ -17,7 +17,7 @@ $('input:radio').change(function () {
     var newImage = "<img src='" + imageURL + "'></img";
 	$('#pendant').html(newImage);
 	printCost(shapes,size,metals);
-
+	maxMessageLength(shape,size,fontsize);
  });
 
 function printCost(shape,size,metal) {
@@ -258,7 +258,7 @@ $('#message').keyup(function() {
     //console.log(how_many_characters);
 
     // Subtract the number of characters typed in from the max amount of char
-    var how_many_left = 14 - how_many_characters;
+    var how_many_left = maxMessageLength - how_many_characters;
 
     // If number of characters is zero turn it red
    	if(how_many_left == 0) {
@@ -300,7 +300,9 @@ $("#fs").change(function() {
 });
 
 $("#size").change(function() {
-    $('.changeMe').css("font-size", $(this).val() + "px");
+    $('.changeMe').css("fontsize", $(this).val() + "px");
+	$("#size") = maxMessageLength(shape,size,fontsize);
+
 });
 
 /*-------------------------------------------------------------------------------------------------
@@ -309,43 +311,44 @@ react to the pendant size changing (line 4), and the font size changing (line 30
 -------------------------------------------------------------------------------------------------*/
 // Global variable that can be accessed by multiple functions
 // passed it to line 261 in place of the hard coded 14
-/*var maxMessageLength = 0;
+// Default message length
+var maxMessageLength = 0;
 
-function changeMaxLength {
+function changeMaxLength(shape, size, fontsize) {
 
 	// I want to change the length when the pendant size changes and the font size changes.
 	// nested if statements that look at both the current pendant size and shape, and the 
 	// current font size, and set maxMessageLength appropriately
 	// call that function that sets the max length in two cases -- 
 	//	1)if the font size is changed (in the function that starts on like 302)
-	//  2) And when the pendant size changes -- so that's your function that starts on line 4
+	//  2) And when the pendant size changes -- so that's the function that starts on line 4
 
 	if(shape == "circle") {
 		if (size == "sm") {
 			// What is the max amount of letters that fit in the small circle
-			if (font-size == "12") {
-				maxMessageLength = 12;
+			if (fontsize == "12") {
+				maxMessageLength = 9;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 12;
+			else if (fontsize == "24") {
+				maxMessageLength = 4;
 			}
 		} 
 
 		else if (size == "md") {
-			if (font-size == "12") {
-				maxMessageLength = 13;
+			if (fontsize == "12") {
+				maxMessageLength = 12;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 11;
+			else if (fontsize == "24") {
+				maxMessageLength = 6;
 			}
 		} 
 
 		else if (size == "lg") {
-			if (font-size == "12") {
-				maxMessageLength = 10;
+			if (fontsize == "12") {
+				maxMessageLength = 14;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 8;
+			else if (fontsize == "24") {
+				maxMessageLength = 9;
 			}
 		}
 	} 
@@ -353,28 +356,28 @@ function changeMaxLength {
 	else if (shape == "square") {
 		if (size == "sm") {
 			// What is the max amount of letters that fit in the small circle
-			if (font-size == "12") {
-				maxMessageLength = 12;
+			if (fontsize == "12") {
+				maxMessageLength = 9;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 12;
+			else if (fontsize == "24") {
+				maxMessageLength = 4;
 			}
 		} 
 
 		else if (size == "md") {
-			if (font-size == "12") {
-				maxMessageLength = 13;
+			if (fontsize == "12") {
+				maxMessageLength = 12;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 11;
+			else if (fontsize == "24") {
+				maxMessageLength = 6;
 			}
 		} 
 
 		else if (size == "lg") {
-			if (font-size == "12") {
-				maxMessageLength = 10;
+			if (fontsize == "12") {
+				maxMessageLength = 14;
 			} 
-			else if (font-size == "16") {
+			else if (fontsize == "24") {
 				maxMessageLength = 8;
 			}
 		}
@@ -383,35 +386,38 @@ function changeMaxLength {
 	else if (shape == "heart") {
 		if (size == "sm") {
 			// What is the max amount of letters that fit in the small circle
-			if (font-size == "12") {
-				maxMessageLength = 12;
+			if (fontsize == "12") {
+				maxMessageLength = 8;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 12;
+			else if (fontsize == "24") {
+				maxMessageLength = 4;
 			}
 		} 
 
 		else if (size == "md") {
-			if (font-size == "12") {
-				maxMessageLength = 13;
-			} 
-			else if (font-size == "16") {
+			if (fontsize == "12") {
 				maxMessageLength = 11;
+			} 
+			else if (fontsize == "24") {
+				maxMessageLength = 5;
 			}
 		} 
 
 		else if (size == "lg") {
-			if (font-size == "12") {
-				maxMessageLength = 10;
+			if (fontsize == "12") {
+				maxMessageLength = 16;
 			} 
-			else if (font-size == "16") {
-				maxMessageLength = 8;
+			else if (fontsize == "24") {
+				maxMessageLength = 9;
 			}
 		}
+
+        $('#message').attr("maxlength",maxMessageLength);
+        $('#message-error').html("Max "+maxMessageLength.toString() +" characters");
+
 	} 
-
-}*/
-
+	    maxMessageLength(shape,size,fontsize);
+}
 
 /*-------------------------------------------------------------------------------------------------
 Toggle, chain specs hidden until clicked ... 
