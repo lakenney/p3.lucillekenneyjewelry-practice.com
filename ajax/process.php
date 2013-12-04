@@ -2,7 +2,7 @@
 
 
 
-#echo time();
+echo time();
 
 #echo $_POST['name'];
 
@@ -12,5 +12,5 @@
 
 
 # Reverse the string and echo it to the page
- echo strrev($_POST['name']);
+# echo strrev($_POST['name']);
 ?>

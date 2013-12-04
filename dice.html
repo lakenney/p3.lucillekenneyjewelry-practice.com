@@ -43,7 +43,9 @@
 
         <script>
                         
-                // Sandbox crednetials for pubnub.com; Sign-up for a free sandbox account to get your own credentials
+                /*-------------------------------------------------------------------------------------------------
+                Sandbox crednetials for pubnub.com; Sign-up for a free sandbox account to get your own credentials
+                -------------------------------------------------------------------------------------------------*/
                 var pubnub = PUBNUB.init({
                         publish_key: 'pub-c-a0df482f-383d-4f7f-ada5-cb67ea486648',
                         subscribe_key: 'sub-c-80afce3e-4c28-11e3-a95a-02ee2ddab7fe'
@@ -52,31 +54,114 @@
                 
                 /*-------------------------------------------------------------------------------------------------
                 Subscribe to the channel
+                Starts listening: 
+                This is triggered after every turn, since the turn sends a message 
                 -------------------------------------------------------------------------------------------------*/
                 pubnub.subscribe({
                         channel: 'game',
                         message: function(message){
-                                console.log(message);
+                                //console.log(message);
+                                //return;
+
+                                // Turn the string of JSON into an array
+                                var results   = $.parseJSON(message);
+                                                                
+                                // Pull the player_id and roll out of the array
+                                var player_id = results['player_id'];
+                                var roll      = results['roll'];                                
+                                
+                                // Roll!
+                                roll_dice(player_id,roll);
                         },
                         
                 });
                 
                 
                 /*-------------------------------------------------------------------------------------------------
-                
+                Send: You take a turn
                 -------------------------------------------------------------------------------------------------*/
                 $('#roll').click(function() {
                                         
+                        // What did you roll?
+                        var random_number = Math.floor((Math.random()*5)*1);
+                        
+                        // Mark the turn
+                        //turn_count++;
+                        
+                        // Output
+                        $('#output').html('Waiting for an opponent to roll...<br>');
+                        $('#you').html(random_number);
+
+                        // Create an object of player_id and roll so it can be made into a json string
+                        var data = new Object();
+                                data['player_id'] = this_player_id;
+                                data['roll']      = random_number; 
+                        
+                        // Convert data to JSON string 
+                        // Example {player_id:2348920, roll:4}
+                        var message       = JSON.stringify(data);
+                        
                         // Publish 
                         pubnub.publish({
-                                channel: 'game',        
-                                message: 'Hello!',
+                                channel: 'game', 
+                                message: message,       
+                                //message: 'Hello are you out there?',
                         });
-                                                        
+                        
+                        // Get rid of button so you can't roll again
+                        $('button').hide();
+                                
                 });
         
-        
-        
+                /*-------------------------------------------------------------------------------------------------
+                
+                -------------------------------------------------------------------------------------------------*/     
+                function roll_dice(player_id, roll) {
+                
+                        // Make sure this roll was by the opponent, not by yourself
+                        if(player_id != this_player_id) {
+                        
+                                // Mark the turn
+                                //turn_count++;   
+                                
+                                // Output
+                                $('#opponent').html(roll);
+                                
+                                // If we haven't reached 2 turns, and your turn is blank, it means it's your turn
+                                if(turn_count < 2 && $('#you').html() == '') {
+                                        $('#output').html('An opponent is waiting for you to roll...<br>');     
+                                }
+                        }
+                        
+                        // End of game = 2 turns; see who won
+                        if($('#opponent').html() != '' && $('#you').html() != '') {
+                                
+                                // Clear the output
+                                $('#output').html('');  
+                                        
+                                // Your opponents roll was higher than yours, you lost
+                                if($('#opponent').html() == $('#you').html()) {
+                                        $('#output').append('A tie!<br>');      
+                                }
+                                if($('#opponent').html() > $('#you').html()) {
+                                        $('#output').append('You lost :(<br>'); 
+                                }
+                                // Your roll was higher than your opponents, you win
+                                else {
+                                        $('#output').append('You won! :)<br>'); 
+                                }
+                                
+                                $('#output').append('Starting a new game in 3 seconds...<br>'); 
+                                
+                                // Let them see the results for 3 seconds, then just refresh this page to start a new game
+                                setTimeout(function(){
+                                        location.reload();
+                                },3000);
+                        }
+                        
+                        
+                }
+                
         </script>
         
         

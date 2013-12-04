@@ -1,0 +1,71 @@
+* {
+	box-sizing:border-box;
+}
+
+#game-over {
+	background-color:black;
+	color:white;	
+	opacity:.75;
+	font-family:Impact;
+	position:fixed;
+	cursor:pointer;
+	z-index:999;
+	background-color:none;
+	width:100%;
+	height:100%;
+	text-align:center;
+	display:none;
+	font-size:15rem;
+}
+
+p {
+	margin:0;
+}
+
+#screen {
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background-color:orange;
+	opacity:0;
+	z-index:999;
+}
+
+
+body,html {
+	background-color:black;
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+
+section {
+	width:100%;
+	height:100%;
+}
+
+.bar {
+	width:25%;
+	float:left;
+	height:100%;
+	cursor:pointer;
+	opacity:.5;
+}
+
+#bar-green {
+	background-color:lime;
+}
+
+#bar-red {
+	background-color:red;
+}
+
+#bar-yellow {
+	background-color:yellow;
+}
+
+#bar-blue {
+	background-color:blue;
+}
